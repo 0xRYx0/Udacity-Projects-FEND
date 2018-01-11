@@ -1,0 +1,50 @@
+body{
+   font-family: 'Lato', sans-serif;
+   color: #2d3c49;
+   font-weight: 300;
+}
+
+header{
+   margin-bottom: 20px;
+   padding-bottom: 10px;
+}
+
+@media screen and (max-width: 400px) {
+   .logo{
+      width: 50px;
+   }
+   .profile-name{
+      font-size: 20px;
+   }
+}
+
+.hr {
+    border-bottom: 4px solid #7d97ad;
+}
+
+.profile-name{
+   margin-top: 20px;
+   font-weight: 100;
+   font-size: 60px;
+}
+
+.middlePic{
+   width: 100%;
+}
+
+.featured-title{
+   margin-top: 30px;
+   margin-bottom: 10px;
+   color: #7d97ad;
+}
+
+.project-title{
+   font-size: 30px;
+   font-weight: 300;
+}
+
+.project-img{
+   width: auto;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}

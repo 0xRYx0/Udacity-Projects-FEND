@@ -1,0 +1,37 @@
+/* add your CSS here */
+body {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #dcdcdc	;
+  box-shadow: 5px 5px 5px #C0C0C0;
+  width: 305px;
+  padding: 10px;
+}
+
+img{
+  /* No need for this since the pic is already 300x300 */
+  width: 300;
+}
+
+span{
+  font-weight: bold;
+}
+
+.infoDiv{
+ border-style: solid;
+ border-width: 1px;
+ border-color: #dcdcdc	;
+ text-align: justify;
+ width: 280px;
+ padding: 10px;
+ margin-top: 10px;
+}
+
+.factSection{
+ font-style: italic;
+}
+
+.factsList{
+  list-style: none;
+  padding-left: 0;
+}
