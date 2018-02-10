@@ -3,13 +3,11 @@
 /* ~~~~~~~~ Enemy Class Detailes ~~~~~~~~ */
 /* Enemies are things to be avoided by the player while the game */
 var canvas = document.createElement('canvas');
-var Enemy = function(orginalXPos, orginalYPos, width, height, speed) {
+var Enemy = function(orginalXPos, orginalYPos, speed) {
     this.orginalXPos  = orginalXPos;
     this.orginalYPos = orginalYPos;
     this.currentXPos = orginalXPos;              // will be used to move the enemies.
     this.currentYPos = orginalYPos;              // will be used to move the enemies.
-    this.width = width;
-    this.height = height;
     this.originalSpeed = speed;
     this.currentSpeed = speed;
     this.sprite = 'images/enemy-bug.png';
@@ -94,10 +92,10 @@ Player.prototype.handleInput = function(keyInput) {
             }
             /* This to check if the player crosses left boarder */
             if ((keyInput === 'left') && (this.currentXPos > 10)) {
-                this.currentXPos -= 100;
+                this.currentXPos -= 101;
             }
             if ((keyInput === 'right') && (this.currentXPos < 400)) {
-                this.currentXPos += 100;
+                this.currentXPos += 101;
             }
         }
 
@@ -139,7 +137,7 @@ Player.prototype.handleInput = function(keyInput) {
 Player.prototype.checkCollisions = function(allEnemies) {
     /* Check is there was a collision between the player and the enemies*/
     if (!this.reachedWater) {
-        for (var i = 0; i < allEnemies.length; i++) {
+        for (var i = 0, leng = allEnemies.length ; i < leng; i++) {
            /* Note: player sprite's size (83*70) & enemy sprite's size (100*70) */
             var playerLeftEdge = this.currentXPos,
                 playerRightEdge = this.currentXPos + 70,
@@ -161,9 +159,9 @@ Player.prototype.checkCollisions = function(allEnemies) {
 };
 
 var allEnemies = [];
-var firstEnemy = new Enemy(15, 60, 80, 62, 200);
-var secondEnemy = new Enemy(30, 145, 80, 62, 250);
-var thirdEnemy = new Enemy(50, 230, 80, 62, 350);
+var firstEnemy = new Enemy(15, 60, 200);
+var secondEnemy = new Enemy(30, 145, 250);
+var thirdEnemy = new Enemy(50, 230, 350);
 
 allEnemies.push(firstEnemy);
 allEnemies.push(secondEnemy);
