@@ -11,8 +11,6 @@ In this game you have a Player and Enemies (Bugs). The goal of the player is to 
 
 ### How to play?
 
-Some useful tips to help you get started:
-
-1. Open the this: [Arcade Game](https://htmlpreview.github.io/?https://github.com/rakan210/Udacity/blob/master/Udacity/Project%234%20ArcadeGame/index.html)
+1. Open the link: [Arcade Game](https://htmlpreview.github.io/?https://github.com/rakan210/Udacity/blob/master/Udacity/Project%234%20ArcadeGame/index.html)
 2. Strat Playing :).
    * Note: You can move the player left, right, up and down using keyboards arrows.
