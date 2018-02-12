@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Neightberhood Map</title>
+   <link rel="stylesheet" href="css/style.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+   <div class="container">
+      <div Id="sidebar" >
+         <input type="text search" data-bind="value: userInput, fillSearchedMarkers" placeholder="Looking for a place?">
+         <ul data-bind="foreach: searchedMarkers">
+            <li> option#1 </li>
+            <li> option#2 </li>
+         </ul>
+      </div>
+         <div id="sidebarBtn">
+            <span></span> <span></span> <span></span>
+         </div>
+
+      <div id="map"></div>
+   </div>
+
+   <script async defer>
+      $(document).ready(function(){
+         $('#sidebarBtn').click(function(){
+            $('#sidebar').toggleClass('visible');
+            $('#sidebarBtn').toggleClass('visible');
+            $('#map').toggleClass('visible');
+         });
+      });
+   </script>
+   <script async defer type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpcOjPqBYX5nfyfSKIUp3NXwUIiQHP0lQ&callback=initMap">
+   </script>
+   <script async defer type="text/javascript" src="js/knockout-3.4.2.js"> </script>
+   <script async defer type="text/javascript" src="js/mapScript.js"> </script>
+
+</body>
+</html>

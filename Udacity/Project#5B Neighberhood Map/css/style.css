@@ -1,0 +1,110 @@
+html, body {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+   font-family: Arial, sans-serif;
+}
+
+ul {
+   padding: 0px;
+   margin: 0px;
+   position: absolute;
+   z-index: 1;
+}
+
+input {
+   font-size: 14px;
+   background: #fff;
+   color: #333;
+   display: block;
+   width: 275px;
+   padding: 10px;
+   top: 0px;
+   left: 0px;
+}
+
+#sidebar ul li {
+   list-style: none;
+   background: #777;
+   color: #ccc;
+   display: block;
+   border-bottom: 1px solid #222;
+   width: 280px;
+   padding: 10px;
+   margin-left: 0px;
+}
+
+#infoWindowDiv{
+   height: 100px;
+   width: 200px;
+}
+
+#container {
+   position: relative;
+}
+
+#sidebar {
+   background: #000;
+   height: 100%;
+   width: 300px;
+   position: absolute;
+   display: block;
+   opacity: 0.8;
+   left:-300px;
+   top:0px;
+   transition: 0.3s left linear;
+   z-index: 1;
+}
+
+#sidebar.visible {
+   left: 0px;
+   transition: 0.3s left linear;
+   position: absolute;
+   z-index: 1;
+}
+
+#sidebarBtn {
+   background: #fff;
+   border-radius: 5px;
+   border: 1px dashed #777;
+   display: inline-block;
+   vertical-align: center;
+   cursor: pointer;
+   width: 30px;
+   height: 25px;
+   margin: 11px 125px;
+   position: absolute;
+   z-index: 2;
+   opacity: 0.7;
+   transition: 0.3s left linear;
+}
+
+#sidebarBtn.visible {
+   left: 285px;
+   transition: 0.3s left linear;
+}
+
+
+#sidebarBtn span{
+   display: block;
+   height: 2px;
+   background-color: #222;
+   margin: 5px;
+   transition: 0.3s left linear;
+}
+
+
+
+#map {
+   height: 100%;
+   bottom: 0px;
+   left: 0px;
+   right: 0px;
+   position: absolute;
+   transition: 0.3s left linear;
+}
+
+#map.visible {
+   left: 300px;
+   transition: 0.3s left linear;
+}
