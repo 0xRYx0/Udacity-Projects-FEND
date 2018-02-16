@@ -4,7 +4,7 @@ function initMap(){
    var options = {
       zoom: 10,
       center: {lat: 40.1, lng:116.5}
-   }
+   };
 
    //**** Setting Map Initialization and needed varibles:
    var map = new google.maps.Map(document.getElementById('map'),options);
@@ -33,54 +33,24 @@ function initMap(){
          if (place.setVisible){
             // Passing locations information to be attached with each marker as well as timeout for the animation
             createMarker(place,index*250);
+            visibleMrkers.push(place);
          }
       });
    }/* End of addPlacesToMap function */
 
-   // places.forEach(function(place, index) {
-   //    // Push markers to visibleMrkers array
-   //    visibleMrkers.push(place);
-   //    alert(visibleMrkers[index]);
-   // });
 
-
-   // // Set-up Knockout observables
-   // var viewModle = {
-   //
-   //    userInput: ko.observable(),
-   //    searchedMarkers: ko.observableArray(),
-   //
-   //
-   //
-   //    // Fill searchedMarkers by each visibleMrkers
-   //    fillSearchedMarkers: function() {
-   //      visibleMrkers.forEach(function(marker) {
-   //         alert(marker);
-   //          this.searchedMarkers.push(marker);
-   //          alert(searchedMarkers);
-   //      });
-   //    },
-   // //
-   // //    // Filter user input
-   // //    filterMarkers: function() {
-   // //       var searchInput = viewModle.userInput().toLowerCase();
-   // //       listView.visiblePlaces.removeAll();
-   // //
-   // //       visibleMarkers.forEach(function(place) {
-   // //          place.marker.setVisible(false);
-   // //
-   // //          if (place.title.toLowerCase().indexOf(searchInput) !== -1) {
-   // //              viewModle.searchedMarkers.push(place);
-   // //          }
-   // //       });
-   // //       viewModle.searchedMarkers().forEach(function(place) {
-   // //          place.marker.setVisible(true);
-   // //       });
-   // //    },
-   // };
-   // viewModle.fillSearchedMarkers();
-   // ko.applyBindings(viewModle);
-
+   //Set-up Knockout View Model:
+   var viewModel = {
+      userInput: ko.observable(''),
+   };
+   viewModel.visiblePlaces = ko.dependentObservable(function() {
+        var search = this.userInput().toLowerCase();
+        return ko.utils.arrayFilter(places, function(place) {
+            check = place.title.toLowerCase().indexOf(search) >= 0
+            return check;
+        });
+    }, viewModel);
+   ko.applyBindings(viewModel);
 
    //****  Function to create markers to the map **//
    function createMarker(properties,timeout){
@@ -107,7 +77,7 @@ function initMap(){
    //****  Function to create infowindow to markers **//
    function createInfoWindow (marker){
       // Create the InfoWindow
-      var infoWindow = new google.maps.InfoWindow;
+      var infoWindow = new google.maps.InfoWindow();
       // Create StreetViewService to show a street view window for marker location or nearest places within 50 meter
       var StreetViewService = new google.maps.StreetViewService();
       var radius = 50;

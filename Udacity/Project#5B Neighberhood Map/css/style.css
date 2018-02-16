@@ -6,6 +6,7 @@ html, body {
 }
 
 ul {
+   style:none;
    padding: 0px;
    margin: 0px;
    position: absolute;

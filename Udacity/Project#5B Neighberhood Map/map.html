@@ -11,11 +11,14 @@
 <body>
    <div class="container">
       <div Id="sidebar" >
-         <input type="text search" data-bind="value: userInput, fillSearchedMarkers" placeholder="Looking for a place?">
-         <ul data-bind="foreach: searchedMarkers">
-            <li> option#1 </li>
-            <li> option#2 </li>
-         </ul>
+         <form>
+            <input placeholder="Looking for a place?" type="search" data-bind="value: userInput, valueUpdate: 'keyup'" autocomplete="off">
+         </form>
+         <ul data-bind="template: {name:'visiblePlaces', foreach:visiblePlaces}"></ul>
+            <script type="text/html" id="visiblePlaces">
+               <li data-bind="text: title"></li>
+            </script>
+
       </div>
          <div id="sidebarBtn">
             <span></span> <span></span> <span></span>
